@@ -25,7 +25,7 @@ class Computer
       # BUG: exact correct ones still count towards correct colors
       if @code[index] == pin
         @feedback[:correct] += 1
-        next
+        @feedback[:correct_color] -= 1 # Short fix for adding correct ones to correct colors
       end
       @feedback[:correct_color] += 1 if @code.include?(pin)
     end
