@@ -9,7 +9,6 @@ class Player
     @comp = Computer.new
     @turn = 0
     @possible_colors = %w[g r m c b y]
-    @guess
   end
 
   def make_guess

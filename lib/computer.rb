@@ -1,6 +1,6 @@
 require_relative "display"
 class Computer
-  attr_accessor :code
+  attr_accessor :code, :feedback
 
   include Display
 
@@ -24,8 +24,13 @@ class Computer
     guessed_code.each_with_index do |pin, index|
       # Is in code included? Then the color matches
       # Is the exact same as in code? Then it is a perfect value
+      if @code[index] == pin
+        @feedback[:correct] += 1
+        next
+      end
       @feedback[:correct_color] += 1 if @code.include?(pin)
-      @feedback[:correct] += 1 if @code[index] == pin
     end
+    Display.feedback(@feedback[:correct_color], @feedback[:correct])
+    @feedback
   end
 end

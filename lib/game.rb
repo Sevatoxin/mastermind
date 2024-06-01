@@ -32,6 +32,27 @@ class Game
     Display.computer_choice_message
     comp.create_code
     Display.show_code(comp.code) # Needs be removed at the end
+    play_game(player, comp)
+  end
+
+  def play_game(player, comp)
     player.make_guess
+    comp.give_feedback(player.guess)
+    check_gamestate(player, comp)
+  end
+
+  def check_gamestate(player, comp)
+    return game_won(player) if player.turn <= 12 && comp.feedback[:correct] == 4
+    return game_over if player.turn > 12
+
+    play_game(player, comp)
+  end
+
+  def game_won(player)
+    Display.won(player.turn)
+  end
+
+  def game_over
+    Display.game_over
   end
 end
