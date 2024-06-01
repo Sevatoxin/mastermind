@@ -1,9 +1,11 @@
+require_relative "display"
 class Computer
-  include Display
   attr_accessor :code
 
+  include Display
+
   def initialize
-    @code_colors = %w[green red magenta blue yellow cyan]
+    @code_colors = %w[g r m b y c]
     @code = []
   end
 
@@ -16,5 +18,8 @@ class Computer
       color = rng.rand(0..@code_colors.length-1)
       @code.push(@code_colors[color])
     end
+  end
+
+  def give_feedback(guessed_code)
   end
 end

@@ -1,6 +1,8 @@
+require_relative "display"
 class Player
-  include Display
   attr_accessor :turn, :guess
+
+  include Display
 
   def initialize
     @turn = 0
