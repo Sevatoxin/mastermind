@@ -2,7 +2,7 @@ require "colorize"
 module Display
 
   def welcome
-    puts "Welcome to Mastermind \ue28c".colorize(:green)
+    puts "Welcome to Mastermind ".colorize(:green) + "\ue28c".colorize(:red)
   end
 
   def computer_choice_message
@@ -21,6 +21,6 @@ module Display
   def show_code(code)
     code_colors = Game.code_to_colors(code)
     pins = ["\uf041".colorize(code_colors[0]), "\uf041".colorize(code_colors[1]), "\uf041".colorize(code_colors[2]), "\uf041".colorize(code_colors[3])]
-    puts "\n#{pins[0]} #{pins[1]} #{pins[2]} #{pins[3]}"
+    puts "\n    #{pins[0]} #{pins[1]} #{pins[2]} #{pins[3]}"
   end
 end

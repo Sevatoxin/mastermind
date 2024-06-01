@@ -10,9 +10,6 @@ class Computer
   end
 
   def create_code
-    # Pseudocode: 
-    # 4 times go through all colors and select on by random
-    # Add all choosesn colors to a new array that contains the choosen color code
     rng = Random.new
     4.times do
       color = rng.rand(0..@code_colors.length-1)
@@ -21,5 +18,9 @@ class Computer
   end
 
   def give_feedback(guessed_code)
+    guessed_code.each do |pin|
+      # Is in code included? Then the color matches
+      # Is the exact same as in code? Then it is a perfect value
+    end
   end
 end

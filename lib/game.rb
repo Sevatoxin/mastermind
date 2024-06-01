@@ -1,5 +1,8 @@
 require_relative "computer"
+require_relative "display"
 class Game
+  include Display
+
   def initialize
     @comp = Computer.new
   end
@@ -26,5 +29,9 @@ class Game
   end
 
   def start_game
+    Display.welcome
+    Display.computer_choice_message
     @comp.create_code
+    Display.show_code(@comp.code)
+  end
 end
