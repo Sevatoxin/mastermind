@@ -30,10 +30,12 @@ module Display
   end
 
   def won(player_turn)
-    puts "You needed #{player_turn} turn(s) to guess the code and beat the computer!"
+    puts "You needed #{player_turn} turn(s) to guess the code and beat the computer!".colorize(:green)
   end
   
-  def game_over
-    puts "You needed more than 12 rounds and could not guess the code. Try again!"
+  def game_over(computer_code)
+    puts "You needed more than 12 rounds and could not guess the code. Try again!".colorize(:red)
+    puts "The code was:".colorize(:red)
+    show_code(computer_code)
   end
 end
