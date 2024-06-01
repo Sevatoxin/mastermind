@@ -22,6 +22,7 @@ class Player
 
     Display.show_code(guess_arr)
     @turn += 1
+    Display.show_current_turn(@turn)
     @guess = guess_arr
   end
 

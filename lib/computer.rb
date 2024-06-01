@@ -22,8 +22,7 @@ class Computer
     @feedback[:correct] = 0
     @feedback[:correct_color] = 0
     guessed_code.each_with_index do |pin, index|
-      # Is in code included? Then the color matches
-      # Is the exact same as in code? Then it is a perfect value
+      # BUG: exact correct ones still count towards correct colors
       if @code[index] == pin
         @feedback[:correct] += 1
         next

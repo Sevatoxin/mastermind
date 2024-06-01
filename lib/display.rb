@@ -38,4 +38,8 @@ module Display
     puts "The code was:".colorize(:red)
     show_code(computer_code)
   end
+
+  def show_current_turn(turn)
+    puts "Turn: #{turn}"
+  end
 end
