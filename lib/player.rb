@@ -13,14 +13,15 @@ class Player
   end
 
   def make_guess
+    Display.player_input_message
     guess = gets.chomp
     guess_arr = guess.split("")
     guess_arr.each do |pin|
-      return new_guess if @possible_colors.include?(pin)
+      return new_guess unless @possible_colors.include?(pin)
     end
     return new_guess if guess_arr.length != 4
 
-    Display.show_code
+    Display.show_code(guess_arr)
     @turn += 1
     @guess = guess_arr
   end

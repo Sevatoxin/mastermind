@@ -4,7 +4,6 @@ class Game
   include Display
 
   def initialize
-    @comp = Computer.new
   end
 
   def self.code_to_colors(code)
@@ -28,10 +27,11 @@ class Game
     colors
   end
 
-  def start_game
+  def start_game(player, comp)
     Display.welcome
     Display.computer_choice_message
-    @comp.create_code
-    Display.show_code(@comp.code)
+    comp.create_code
+    Display.show_code(comp.code) # Needs be removed at the end
+    player.make_guess
   end
 end

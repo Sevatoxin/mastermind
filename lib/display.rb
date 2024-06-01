@@ -11,7 +11,7 @@ module Display
 
   def player_input_message
     puts "Please enter code you think the computer choose.".colorize(:red)
-    puts "Input must contain 4 pins in this format: (g)reen, (r)ed, (m)agenta, (b)lue, (y)ellow, (c)yan"
+    puts "Input must contain 4 pins in this format: (g)reen, (r)ed, (m)agenta, (b)lue, (y)ellow, (c)yan".colorize(:red)
   end
 
   def new_guess_message
